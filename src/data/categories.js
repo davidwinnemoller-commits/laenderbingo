@@ -1,0 +1,157 @@
+// =============================================
+// data/categories.js
+// Alle möglichen Kategorien für Länderbingo
+//
+// Jede Kategorie hat:
+//   id      string   Eindeutige ID
+//   icon    string   Emoji-Icon
+//   label   string   Anzeigename (kurz, passt in Zelle)
+//   check   function (country) => boolean
+// =============================================
+
+export const ALL_CATEGORIES = [
+  {
+    id: "olympic100",
+    icon: "🏅",
+    label: "100+ Olympia-Medaillen",
+    check: c => c.olympicMedals >= 100,
+  },
+  {
+    id: "temp25",
+    icon: "🌡️",
+    label: "Ø-Temp über 25°C",
+    check: c => c.avgTemp > 25,
+  },
+  {
+    id: "pop100m",
+    icon: "👥",
+    label: "100+ Mio. Einwohner",
+    check: c => c.population >= 100,
+  },
+  {
+    id: "peak5000",
+    icon: "🏔️",
+    label: "Berg über 5000 m",
+    check: c => c.highestPeak > 5000,
+  },
+  {
+    id: "landlocked",
+    icon: "🌊",
+    label: "Kein Meereszugang",
+    check: c => c.landlocked,
+  },
+  {
+    id: "euMember",
+    icon: "🇪🇺",
+    label: "EU-Mitglied",
+    check: c => c.euMember,
+  },
+  {
+    id: "gdp40k",
+    icon: "💰",
+    label: "BIP/Kopf über $40.000",
+    check: c => c.gdpPerCapita >= 40000,
+  },
+  {
+    id: "worldCup",
+    icon: "🏆",
+    label: "Fußball-Weltmeister",
+    check: c => c.worldCupWinner,
+  },
+  {
+    id: "island",
+    icon: "🏝️",
+    label: "Inselstaat",
+    check: c => c.isIsland,
+  },
+  {
+    id: "area1m",
+    icon: "📏",
+    label: "Fläche über 1 Mio. km²",
+    check: c => c.area >= 1000000,
+  },
+  {
+    id: "africa",
+    icon: "🌍",
+    label: "In Afrika",
+    check: c => c.continent === "Africa",
+  },
+  {
+    id: "southAmerica",
+    icon: "🗺️",
+    label: "In Südamerika",
+    check: c => c.continent === "South America",
+  },
+  {
+    id: "literacy99",
+    icon: "🎓",
+    label: "Alphabetisierung 99%+",
+    check: c => c.literacy >= 99,
+  },
+  {
+    id: "equator",
+    icon: "🌴",
+    label: "Nahe Äquator (<10°)",
+    check: c => c.equatorNear,
+  },
+  {
+    id: "nuclear",
+    icon: "⚛️",
+    label: "Atommacht",
+    check: c => c.nuclearPower,
+  },
+  {
+    id: "elephants",
+    icon: "🐘",
+    label: "Freilebende Elefanten",
+    check: c => c.wildElephants,
+  },
+  {
+    id: "g7",
+    icon: "🤝",
+    label: "G7-Mitglied",
+    check: c => c.g7Member,
+  },
+  {
+    id: "alpine",
+    icon: "⛷️",
+    label: "An den Alpen gelegen",
+    check: c => c.alpineCountry,
+  },
+  {
+    id: "mediterranean",
+    icon: "☀️",
+    label: "Mittelmeeranrainer",
+    check: c => c.mediterranean,
+  },
+  {
+    id: "pop5m",
+    icon: "🔬",
+    label: "Unter 5 Mio. Einwohner",
+    check: c => c.population < 5,
+  },
+  {
+    id: "gdpLow",
+    icon: "📉",
+    label: "BIP/Kopf unter $2.000",
+    check: c => c.gdpPerCapita < 2000,
+  },
+  {
+    id: "asia",
+    icon: "🏯",
+    label: "In Asien",
+    check: c => c.continent === "Asia",
+  },
+  {
+    id: "tempCold",
+    icon: "🧊",
+    label: "Ø-Temp unter 5°C",
+    check: c => c.avgTemp < 5,
+  },
+  {
+    id: "olympic500",
+    icon: "🥇",
+    label: "500+ Olympia-Medaillen",
+    check: c => c.olympicMedals >= 500,
+  },
+];

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Länderbingo</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="moves-badge" id="moves-display">42</div>
+    <div class="header-info">
+      <h1 class="game-title">Länderbingo</h1>
+      <p class="status-text" id="status-text">Bereit · Drücke Start</p>
+    </div>
+    <button class="btn-skip" id="skip-btn" disabled>
+      ⏭ Skip
+    </button>
+  </header>
+
+  <!-- CURRENT COUNTRY -->
+  <div class="current-country" id="current-country">
+    <span class="country-flag" id="country-flag">🌍</span>
+    <div class="country-info">
+      <span class="country-name" id="country-name">—</span>
+      <span class="country-hint" id="country-hint"></span>
+    </div>
+  </div>
+
+  <!-- FEEDBACK -->
+  <div class="feedback" id="feedback"></div>
+
+  <!-- BINGO BANNER -->
+  <div class="bingo-banner" id="bingo-banner">🎉 BINGO!</div>
+
+  <!-- 4x4 GRID -->
+  <main class="grid" id="grid"></main>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-icon">✓</span> <span id="correct-count">0</span> richtig</div>
+    <div class="stat"><span class="stat-icon">✗</span> <span id="wrong-count">0</span> falsch</div>
+    <div class="stat"><span class="stat-icon">⏭</span> <span id="skip-count">0</span> übersprungen</div>
+  </div>
+
+  <!-- END SCREEN (hidden initially) -->
+  <div class="end-screen" id="end-screen" style="display:none">
+    <div class="end-card">
+      <div class="end-title" id="end-title">Spiel beendet!</div>
+      <div class="end-sub" id="end-sub"></div>
+      <div class="end-bingo" id="end-bingo"></div>
+      <button class="btn-restart" id="restart-btn">🔄 Nochmal spielen</button>
+    </div>
+  </div>
+
+  <!-- START SCREEN -->
+  <div class="start-screen" id="start-screen">
+    <div class="start-card">
+      <div class="start-emoji">🌍</div>
+      <h2 class="start-title">Länderbingo</h2>
+      <p class="start-desc">
+        42 Länder, 16 Kategorien. Ordne jedes Land der richtigen Kategorie zu.<br>
+        Richtig: −1 Zug &nbsp;|&nbsp; Falsch: −2 Züge &nbsp;|&nbsp; Skip: −1 Zug
+      </p>
+      <button class="btn-start" id="start-btn">Spiel starten</button>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
