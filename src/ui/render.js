@@ -11,6 +11,7 @@ export const DOM = {
   movesDisplay:   $("moves-display"),
   statusText:     $("status-text"),
   skipBtn:        $("skip-btn"),
+  themeBtn:       $("theme-btn"),
   currentCountry: $("current-country"),
   countryFlag:    $("country-flag"),
   countryName:    $("country-name"),
@@ -30,6 +31,28 @@ export const DOM = {
   startBtn:       $("start-btn"),
 };
 
+// ── Dark Mode ────────────────────────────────
+
+const STORAGE_KEY = "geogrid-theme";
+
+function applyTheme(dark) {
+  document.body.classList.toggle("dark", dark);
+  DOM.themeBtn.textContent = dark ? "☀️" : "🌙";
+  DOM.themeBtn.title = dark ? "Zum hellen Modus wechseln" : "Zum dunklen Modus wechseln";
+  localStorage.setItem(STORAGE_KEY, dark ? "dark" : "light");
+}
+
+export function initTheme() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const dark = saved ? saved === "dark" : prefersDark;
+  applyTheme(dark);
+
+  DOM.themeBtn.addEventListener("click", () => {
+    applyTheme(!document.body.classList.contains("dark"));
+  });
+}
+
 // ── Grid rendern ─────────────────────────────
 
 export function renderGrid(state, onCellClick) {
@@ -42,8 +65,8 @@ export function renderGrid(state, onCellClick) {
     if (state.bingoCells.has(i))    cell.classList.add("bingo-line");
 
     const flags = state.filled[i].map(c =>
-  `<img src="https://flagcdn.com/w20/${c.code}.png" height="14" alt="${c.name}" style="border-radius:2px">`
-).join(" ");
+      `<img src="https://flagcdn.com/w20/${c.code}.png" height="14" alt="${c.name}" style="border-radius:2px">`
+    ).join(" ");
 
     cell.innerHTML = `
       <span class="cell-icon">${cat.icon}</span>
@@ -69,7 +92,6 @@ export function renderCurrentCountry(country) {
 export function updateHeader(state) {
   DOM.movesDisplay.textContent = state.moves;
 
-  // Farbe bei wenig Zügen
   DOM.movesDisplay.classList.remove("warning", "danger");
   if (state.moves <= 5)       DOM.movesDisplay.classList.add("danger");
   else if (state.moves <= 15) DOM.movesDisplay.classList.add("warning");

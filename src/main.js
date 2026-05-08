@@ -12,6 +12,7 @@ import {
 
 import {
   DOM,
+  initTheme,
   renderGrid,
   renderCurrentCountry,
   updateHeader,
@@ -24,8 +25,10 @@ import {
   setSkipEnabled,
 } from "./ui/render.js";
 
-// ── Spielzustand ─────────────────────────────
+// ── Dark Mode ────────────────────────────────
+initTheme();
 
+// ── Spielzustand ─────────────────────────────
 let state = null;
 
 // ── Spiel starten ────────────────────────────
