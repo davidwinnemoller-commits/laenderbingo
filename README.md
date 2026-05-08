@@ -9,7 +9,7 @@ Geografiespiel: 42 Länder, 16 Kategorien, 42 Züge.
 - Für jedes Land kannst du **eine Zelle anklicken**, um das Land dieser Kategorie zuzuordnen:
   -  Richtig zugeordnet → **−1 Zug**
   -  Falsch zugeordnet → **−2 Züge**
-  - ⏭ Übersprungen (kein passendes Feld) → **−1 Zug**
+  -  Übersprungen (kein passendes Feld) → **−1 Zug**
 - Ziel: Möglichst viele Kategorien füllen und **Bingo** erreichen!
 
 ---
