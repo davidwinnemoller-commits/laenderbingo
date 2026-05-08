@@ -27,7 +27,7 @@
 
 export const COUNTRIES = [
   {
-    name: "Deutschland", flag: "🇩🇪",
+    name: "Deutschland", flag: "🇩🇪", code: "de",
     olympicMedals: 600, avgTemp: 10, population: 84, highestPeak: 2962,
     landlocked: false, euMember: true, gdpPerCapita: 48000, worldCupWinner: true,
     isIsland: false, area: 357000, continent: "Europe", literacy: 99,
@@ -35,7 +35,7 @@ export const COUNTRIES = [
     g7Member: true, alpineCountry: true, mediterranean: false,
   },
   {
-    name: "Frankreich", flag: "🇫🇷",
+    name: "Frankreich", flag: "🇫🇷", code: "fr",
     olympicMedals: 761, avgTemp: 12, population: 68, highestPeak: 4810,
     landlocked: false, euMember: true, gdpPerCapita: 43000, worldCupWinner: true,
     isIsland: false, area: 551000, continent: "Europe", literacy: 99,
@@ -43,7 +43,7 @@ export const COUNTRIES = [
     g7Member: true, alpineCountry: true, mediterranean: true,
   },
   {
-    name: "Brasilien", flag: "🇧🇷",
+    name: "Brasilien", flag: "🇧🇷", code: "br",
     olympicMedals: 170, avgTemp: 24, population: 215, highestPeak: 2994,
     landlocked: false, euMember: false, gdpPerCapita: 9600, worldCupWinner: true,
     isIsland: false, area: 8515000, continent: "South America", literacy: 94,
@@ -51,7 +51,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "China", flag: "🇨🇳",
+    name: "China", flag: "🇨🇳", code: "cn",
     olympicMedals: 620, avgTemp: 13, population: 1400, highestPeak: 8849,
     landlocked: false, euMember: false, gdpPerCapita: 12700, worldCupWinner: false,
     isIsland: false, area: 9597000, continent: "Asia", literacy: 97,
@@ -59,7 +59,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "USA", flag: "🇺🇸",
+    name: "USA", flag: "🇺🇸", code: "us",
     olympicMedals: 2638, avgTemp: 16, population: 335, highestPeak: 6194,
     landlocked: false, euMember: false, gdpPerCapita: 76000, worldCupWinner: false,
     isIsland: false, area: 9372000, continent: "North America", literacy: 99,
@@ -67,7 +67,7 @@ export const COUNTRIES = [
     g7Member: true, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Indien", flag: "🇮🇳",
+    name: "Indien", flag: "🇮🇳", code: "in",
     olympicMedals: 35, avgTemp: 26, population: 1400, highestPeak: 8586,
     landlocked: false, euMember: false, gdpPerCapita: 2400, worldCupWinner: false,
     isIsland: false, area: 3287000, continent: "Asia", literacy: 77,
@@ -75,7 +75,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Australien", flag: "🇦🇺",
+    name: "Australien", flag: "🇦🇺", code: "au",
     olympicMedals: 497, avgTemp: 22, population: 26, highestPeak: 2228,
     landlocked: false, euMember: false, gdpPerCapita: 55000, worldCupWinner: false,
     isIsland: true, area: 7692000, continent: "Oceania", literacy: 99,
@@ -83,7 +83,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Kenia", flag: "🇰🇪",
+    name: "Kenia", flag: "🇰🇪", code: "ke",
     olympicMedals: 107, avgTemp: 24, population: 55, highestPeak: 5199,
     landlocked: false, euMember: false, gdpPerCapita: 1800, worldCupWinner: false,
     isIsland: false, area: 580000, continent: "Africa", literacy: 82,
@@ -91,7 +91,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Norwegen", flag: "🇳🇴",
+    name: "Norwegen", flag: "🇳🇴", code: "no",
     olympicMedals: 405, avgTemp: 2, population: 5, highestPeak: 2469,
     landlocked: false, euMember: false, gdpPerCapita: 90000, worldCupWinner: false,
     isIsland: false, area: 385000, continent: "Europe", literacy: 99,
@@ -99,7 +99,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Nepal", flag: "🇳🇵",
+    name: "Nepal", flag: "🇳🇵", code: "np",
     olympicMedals: 0, avgTemp: 16, population: 30, highestPeak: 8849,
     landlocked: true, euMember: false, gdpPerCapita: 1100, worldCupWinner: false,
     isIsland: false, area: 147000, continent: "Asia", literacy: 76,
@@ -107,7 +107,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Bolivien", flag: "🇧🇴",
+    name: "Bolivien", flag: "🇧🇴", code: "bo",
     olympicMedals: 2, avgTemp: 16, population: 12, highestPeak: 6542,
     landlocked: true, euMember: false, gdpPerCapita: 3500, worldCupWinner: false,
     isIsland: false, area: 1099000, continent: "South America", literacy: 93,
@@ -115,7 +115,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Schweiz", flag: "🇨🇭",
+    name: "Schweiz", flag: "🇨🇭", code: "ch",
     olympicMedals: 190, avgTemp: 9, population: 9, highestPeak: 4634,
     landlocked: true, euMember: false, gdpPerCapita: 92000, worldCupWinner: false,
     isIsland: false, area: 41000, continent: "Europe", literacy: 99,
@@ -123,7 +123,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: true, mediterranean: false,
   },
   {
-    name: "Nigeria", flag: "🇳🇬",
+    name: "Nigeria", flag: "🇳🇬", code: "ng",
     olympicMedals: 25, avgTemp: 28, population: 220, highestPeak: 2419,
     landlocked: false, euMember: false, gdpPerCapita: 2000, worldCupWinner: false,
     isIsland: false, area: 924000, continent: "Africa", literacy: 72,
@@ -131,7 +131,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Argentinien", flag: "🇦🇷",
+    name: "Argentinien", flag: "🇦🇷", code: "ar",
     olympicMedals: 241, avgTemp: 16, population: 46, highestPeak: 6961,
     landlocked: false, euMember: false, gdpPerCapita: 11000, worldCupWinner: true,
     isIsland: false, area: 2780000, continent: "South America", literacy: 99,
@@ -139,7 +139,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Japan", flag: "🇯🇵",
+    name: "Japan", flag: "🇯🇵", code: "jp",
     olympicMedals: 567, avgTemp: 14, population: 124, highestPeak: 3776,
     landlocked: false, euMember: false, gdpPerCapita: 34000, worldCupWinner: false,
     isIsland: true, area: 378000, continent: "Asia", literacy: 99,
@@ -147,7 +147,7 @@ export const COUNTRIES = [
     g7Member: true, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Luxemburg", flag: "🇱🇺",
+    name: "Luxemburg", flag: "🇱🇺", code: "lu",
     olympicMedals: 2, avgTemp: 10, population: 1, highestPeak: 560,
     landlocked: true, euMember: true, gdpPerCapita: 127000, worldCupWinner: false,
     isIsland: false, area: 2586, continent: "Europe", literacy: 99,
@@ -155,7 +155,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Tansania", flag: "🇹🇿",
+    name: "Tansania", flag: "🇹🇿", code: "tz",
     olympicMedals: 7, avgTemp: 25, population: 63, highestPeak: 5895,
     landlocked: false, euMember: false, gdpPerCapita: 1100, worldCupWinner: false,
     isIsland: false, area: 945000, continent: "Africa", literacy: 78,
@@ -163,7 +163,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Kanada", flag: "🇨🇦",
+    name: "Kanada", flag: "🇨🇦", code: "ca",
     olympicMedals: 447, avgTemp: 2, population: 38, highestPeak: 5959,
     landlocked: false, euMember: false, gdpPerCapita: 52000, worldCupWinner: false,
     isIsland: false, area: 9985000, continent: "North America", literacy: 99,
@@ -171,7 +171,7 @@ export const COUNTRIES = [
     g7Member: true, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Neuseeland", flag: "🇳🇿",
+    name: "Neuseeland", flag: "🇳🇿", code: "nz",
     olympicMedals: 104, avgTemp: 13, population: 5, highestPeak: 3724,
     landlocked: false, euMember: false, gdpPerCapita: 46000, worldCupWinner: false,
     isIsland: true, area: 268000, continent: "Oceania", literacy: 99,
@@ -179,7 +179,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Russland", flag: "🇷🇺",
+    name: "Russland", flag: "🇷🇺", code: "ru",
     olympicMedals: 1900, avgTemp: 5, population: 144, highestPeak: 5642,
     landlocked: false, euMember: false, gdpPerCapita: 12200, worldCupWinner: false,
     isIsland: false, area: 17098000, continent: "Europe", literacy: 99,
@@ -187,7 +187,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Ägypten", flag: "🇪🇬",
+    name: "Ägypten", flag: "🇪🇬", code: "eg",
     olympicMedals: 47, avgTemp: 28, population: 103, highestPeak: 2629,
     landlocked: false, euMember: false, gdpPerCapita: 3500, worldCupWinner: false,
     isIsland: false, area: 1002000, continent: "Africa", literacy: 73,
@@ -195,7 +195,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: true,
   },
   {
-    name: "Kolumbien", flag: "🇨🇴",
+    name: "Kolumbien", flag: "🇨🇴", code: "co",
     olympicMedals: 43, avgTemp: 25, population: 52, highestPeak: 5730,
     landlocked: false, euMember: false, gdpPerCapita: 6600, worldCupWinner: false,
     isIsland: false, area: 1142000, continent: "South America", literacy: 95,
@@ -203,7 +203,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Österreich", flag: "🇦🇹",
+    name: "Österreich", flag: "🇦🇹", code: "at",
     olympicMedals: 305, avgTemp: 8, population: 9, highestPeak: 3798,
     landlocked: true, euMember: true, gdpPerCapita: 53000, worldCupWinner: false,
     isIsland: false, area: 84000, continent: "Europe", literacy: 99,
@@ -211,7 +211,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: true, mediterranean: false,
   },
   {
-    name: "Island", flag: "🇮🇸",
+    name: "Island", flag: "🇮🇸", code: "is",
     olympicMedals: 4, avgTemp: 2, population: 0.4, highestPeak: 2110,
     landlocked: false, euMember: false, gdpPerCapita: 70000, worldCupWinner: false,
     isIsland: true, area: 103000, continent: "Europe", literacy: 99,
@@ -219,7 +219,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Pakistan", flag: "🇵🇰",
+    name: "Pakistan", flag: "🇵🇰", code: "pk",
     olympicMedals: 10, avgTemp: 24, population: 230, highestPeak: 8611,
     landlocked: false, euMember: false, gdpPerCapita: 1600, worldCupWinner: false,
     isIsland: false, area: 881000, continent: "Asia", literacy: 57,
@@ -227,7 +227,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Peru", flag: "🇵🇪",
+    name: "Peru", flag: "🇵🇪", code: "pe",
     olympicMedals: 11, avgTemp: 20, population: 33, highestPeak: 6768,
     landlocked: false, euMember: false, gdpPerCapita: 6500, worldCupWinner: false,
     isIsland: false, area: 1285000, continent: "South America", literacy: 94,
@@ -235,7 +235,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Indonesien", flag: "🇮🇩",
+    name: "Indonesien", flag: "🇮🇩", code: "id",
     olympicMedals: 56, avgTemp: 27, population: 270, highestPeak: 5030,
     landlocked: false, euMember: false, gdpPerCapita: 4600, worldCupWinner: false,
     isIsland: true, area: 1905000, continent: "Asia", literacy: 96,
@@ -243,7 +243,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Schweden", flag: "🇸🇪",
+    name: "Schweden", flag: "🇸🇪", code: "se",
     olympicMedals: 654, avgTemp: 4, population: 10, highestPeak: 2098,
     landlocked: false, euMember: true, gdpPerCapita: 56000, worldCupWinner: false,
     isIsland: false, area: 450000, continent: "Europe", literacy: 99,
@@ -251,7 +251,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Kuba", flag: "🇨🇺",
+    name: "Kuba", flag: "🇨🇺", code: "cu",
     olympicMedals: 236, avgTemp: 25, population: 11, highestPeak: 1974,
     landlocked: false, euMember: false, gdpPerCapita: 2500, worldCupWinner: false,
     isIsland: true, area: 110000, continent: "North America", literacy: 99,
@@ -259,7 +259,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Äthiopien", flag: "🇪🇹",
+    name: "Äthiopien", flag: "🇪🇹", code: "et",
     olympicMedals: 64, avgTemp: 22, population: 125, highestPeak: 4533,
     landlocked: true, euMember: false, gdpPerCapita: 900, worldCupWinner: false,
     isIsland: false, area: 1104000, continent: "Africa", literacy: 52,
@@ -267,7 +267,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Mongolei", flag: "🇲🇳",
+    name: "Mongolei", flag: "🇲🇳", code: "mn",
     olympicMedals: 29, avgTemp: 0, population: 3, highestPeak: 4374,
     landlocked: true, euMember: false, gdpPerCapita: 4400, worldCupWinner: false,
     isIsland: false, area: 1564000, continent: "Asia", literacy: 98,
@@ -275,7 +275,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Portugal", flag: "🇵🇹",
+    name: "Portugal", flag: "🇵🇹", code: "pt",
     olympicMedals: 52, avgTemp: 17, population: 10, highestPeak: 2351,
     landlocked: false, euMember: true, gdpPerCapita: 25000, worldCupWinner: false,
     isIsland: false, area: 92000, continent: "Europe", literacy: 96,
@@ -283,7 +283,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: true,
   },
   {
-    name: "Thailand", flag: "🇹🇭",
+    name: "Thailand", flag: "🇹🇭", code: "th",
     olympicMedals: 36, avgTemp: 28, population: 72, highestPeak: 2565,
     landlocked: false, euMember: false, gdpPerCapita: 7200, worldCupWinner: false,
     isIsland: false, area: 513000, continent: "Asia", literacy: 93,
@@ -291,7 +291,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Südafrika", flag: "🇿🇦",
+    name: "Südafrika", flag: "🇿🇦", code: "za",
     olympicMedals: 90, avgTemp: 18, population: 60, highestPeak: 3408,
     landlocked: false, euMember: false, gdpPerCapita: 6500, worldCupWinner: false,
     isIsland: false, area: 1219000, continent: "Africa", literacy: 87,
@@ -299,7 +299,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Kasachstan", flag: "🇰🇿",
+    name: "Kasachstan", flag: "🇰🇿", code: "kz",
     olympicMedals: 79, avgTemp: 7, population: 19, highestPeak: 4999,
     landlocked: true, euMember: false, gdpPerCapita: 9900, worldCupWinner: false,
     isIsland: false, area: 2725000, continent: "Asia", literacy: 99,
@@ -307,7 +307,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Griechenland", flag: "🇬🇷",
+    name: "Griechenland", flag: "🇬🇷", code: "gr",
     olympicMedals: 118, avgTemp: 18, population: 10, highestPeak: 2918,
     landlocked: false, euMember: true, gdpPerCapita: 20000, worldCupWinner: false,
     isIsland: false, area: 132000, continent: "Europe", literacy: 97,
@@ -315,7 +315,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: true,
   },
   {
-    name: "Philippinen", flag: "🇵🇭",
+    name: "Philippinen", flag: "🇵🇭", code: "ph",
     olympicMedals: 10, avgTemp: 27, population: 115, highestPeak: 2954,
     landlocked: false, euMember: false, gdpPerCapita: 3500, worldCupWinner: false,
     isIsland: true, area: 300000, continent: "Asia", literacy: 97,
@@ -323,7 +323,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Simbabwe", flag: "🇿🇼",
+    name: "Simbabwe", flag: "🇿🇼", code: "zw",
     olympicMedals: 8, avgTemp: 20, population: 16, highestPeak: 2592,
     landlocked: true, euMember: false, gdpPerCapita: 1500, worldCupWinner: false,
     isIsland: false, area: 391000, continent: "Africa", literacy: 88,
@@ -331,7 +331,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Dänemark", flag: "🇩🇰",
+    name: "Dänemark", flag: "🇩🇰", code: "dk",
     olympicMedals: 179, avgTemp: 9, population: 6, highestPeak: 171,
     landlocked: false, euMember: true, gdpPerCapita: 62000, worldCupWinner: false,
     isIsland: false, area: 43000, continent: "Europe", literacy: 99,
@@ -339,7 +339,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Madagaskar", flag: "🇲🇬",
+    name: "Madagaskar", flag: "🇲🇬", code: "mg",
     olympicMedals: 1, avgTemp: 24, population: 28, highestPeak: 2876,
     landlocked: false, euMember: false, gdpPerCapita: 500, worldCupWinner: false,
     isIsland: true, area: 587000, continent: "Africa", literacy: 76,
@@ -347,7 +347,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Kirgisistan", flag: "🇰🇬",
+    name: "Kirgisistan", flag: "🇰🇬", code: "kg",
     olympicMedals: 13, avgTemp: 4, population: 7, highestPeak: 7439,
     landlocked: true, euMember: false, gdpPerCapita: 1200, worldCupWinner: false,
     isIsland: false, area: 200000, continent: "Asia", literacy: 99,
@@ -355,7 +355,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Mexiko", flag: "🇲🇽",
+    name: "Mexiko", flag: "🇲🇽", code: "mx",
     olympicMedals: 74, avgTemp: 22, population: 130, highestPeak: 5636,
     landlocked: false, euMember: false, gdpPerCapita: 10600, worldCupWinner: false,
     isIsland: false, area: 1973000, continent: "North America", literacy: 95,
@@ -363,7 +363,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Italien", flag: "🇮🇹",
+    name: "Italien", flag: "🇮🇹", code: "it",
     olympicMedals: 577, avgTemp: 14, population: 60, highestPeak: 4748,
     landlocked: false, euMember: true, gdpPerCapita: 35000, worldCupWinner: true,
     isIsland: false, area: 301000, continent: "Europe", literacy: 99,
@@ -371,7 +371,7 @@ export const COUNTRIES = [
     g7Member: true, alpineCountry: true, mediterranean: true,
   },
   {
-    name: "Spanien", flag: "🇪🇸",
+    name: "Spanien", flag: "🇪🇸", code: "es",
     olympicMedals: 178, avgTemp: 15, population: 47, highestPeak: 3718,
     landlocked: false, euMember: true, gdpPerCapita: 30000, worldCupWinner: true,
     isIsland: false, area: 505000, continent: "Europe", literacy: 98,
@@ -379,7 +379,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: true,
   },
   {
-    name: "Niederlande", flag: "🇳🇱",
+    name: "Niederlande", flag: "🇳🇱", code: "nl",
     olympicMedals: 306, avgTemp: 11, population: 18, highestPeak: 322,
     landlocked: false, euMember: true, gdpPerCapita: 58000, worldCupWinner: false,
     isIsland: false, area: 42000, continent: "Europe", literacy: 99,
@@ -387,7 +387,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Ungarn", flag: "🇭🇺",
+    name: "Ungarn", flag: "🇭🇺", code: "hu",
     olympicMedals: 491, avgTemp: 11, population: 10, highestPeak: 1014,
     landlocked: true, euMember: true, gdpPerCapita: 18000, worldCupWinner: false,
     isIsland: false, area: 93000, continent: "Europe", literacy: 99,
@@ -395,7 +395,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Kamerun", flag: "🇨🇲",
+    name: "Kamerun", flag: "🇨🇲", code: "cm",
     olympicMedals: 11, avgTemp: 27, population: 28, highestPeak: 4095,
     landlocked: false, euMember: false, gdpPerCapita: 1600, worldCupWinner: false,
     isIsland: false, area: 475000, continent: "Africa", literacy: 78,
@@ -403,7 +403,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Usbekistan", flag: "🇺🇿",
+    name: "Usbekistan", flag: "🇺🇿", code: "uz",
     olympicMedals: 43, avgTemp: 13, population: 36, highestPeak: 4643,
     landlocked: true, euMember: false, gdpPerCapita: 2000, worldCupWinner: false,
     isIsland: false, area: 449000, continent: "Asia", literacy: 99,
@@ -411,7 +411,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Saudi-Arabien", flag: "🇸🇦",
+    name: "Saudi-Arabien", flag: "🇸🇦", code: "sa",
     olympicMedals: 3, avgTemp: 30, population: 36, highestPeak: 3133,
     landlocked: false, euMember: false, gdpPerCapita: 24000, worldCupWinner: false,
     isIsland: false, area: 2150000, continent: "Asia", literacy: 97,
@@ -419,7 +419,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: false,
   },
   {
-    name: "Marokko", flag: "🇲🇦",
+    name: "Marokko", flag: "🇲🇦", code: "ma",
     olympicMedals: 23, avgTemp: 20, population: 38, highestPeak: 4167,
     landlocked: false, euMember: false, gdpPerCapita: 3300, worldCupWinner: false,
     isIsland: false, area: 447000, continent: "Africa", literacy: 74,
@@ -427,7 +427,7 @@ export const COUNTRIES = [
     g7Member: false, alpineCountry: false, mediterranean: true,
   },
   {
-    name: "Venezuela", flag: "🇻🇪",
+    name: "Venezuela", flag: "🇻🇪", code: "ve",
     olympicMedals: 16, avgTemp: 26, population: 29, highestPeak: 4978,
     landlocked: false, euMember: false, gdpPerCapita: 1600, worldCupWinner: false,
     isIsland: false, area: 912000, continent: "South America", literacy: 97,

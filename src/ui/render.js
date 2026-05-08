@@ -41,7 +41,9 @@ export function renderGrid(state, onCellClick) {
     if (state.filled[i].length > 0) cell.classList.add("filled");
     if (state.bingoCells.has(i))    cell.classList.add("bingo-line");
 
-    const flags = state.filled[i].map(c => c.flag).join(" ");
+    const flags = state.filled[i].map(c =>
+  `<img src="https://flagcdn.com/w20/${c.code}.png" height="14" alt="${c.name}" style="border-radius:2px">`
+).join(" ");
 
     cell.innerHTML = `
       <span class="cell-icon">${cat.icon}</span>
@@ -57,7 +59,7 @@ export function renderGrid(state, onCellClick) {
 // ── Aktuelles Land ───────────────────────────
 
 export function renderCurrentCountry(country) {
-  DOM.countryFlag.textContent = country.flag;
+  DOM.countryFlag.innerHTML = `<img src="https://flagcdn.com/w80/${country.code}.png" height="48" alt="${country.name}" style="border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.15)">`;
   DOM.countryName.textContent = country.name;
   DOM.countryHint.textContent = "";
 }
