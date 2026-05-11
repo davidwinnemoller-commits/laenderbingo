@@ -18,7 +18,6 @@ import {
   updateHeader,
   showFeedback,
   flashCell,
-  showBingoBanner,
   showEndScreen,
   hideEndScreen,
   hideStartScreen,
@@ -63,11 +62,6 @@ function handleCellClick(cellIndex) {
   } else {
     showFeedback(`✗ ${country.name} passt nicht zu „${category.label}" (−2 Züge)`, "bad");
     flashCell(cellIndex, "wrong");
-  }
-
-  // Bingo?
-  if (result.bingoResult.newLines.length > 0) {
-    setTimeout(() => showBingoBanner(state.bingoLines.size), 400);
   }
 
   updateHeader(state);

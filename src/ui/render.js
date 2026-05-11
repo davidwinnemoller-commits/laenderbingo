@@ -17,7 +17,6 @@ export const DOM = {
   countryName:    $("country-name"),
   countryHint:    $("country-hint"),
   feedback:       $("feedback"),
-  bingoBanner:    $("bingo-banner"),
   grid:           $("grid"),
   correctCount:   $("correct-count"),
   wrongCount:     $("wrong-count"),
@@ -128,14 +127,6 @@ export function flashCell(index, type) {
 
   cell.classList.add(`flash-${type}`);
   setTimeout(() => cell.classList.remove(`flash-${type}`), 400);
-}
-
-// ── Bingo-Banner ─────────────────────────────
-
-export function showBingoBanner(count) {
-  DOM.bingoBanner.textContent = count > 1 ? `🎉 ${count}x BINGO!` : "🎉 BINGO!";
-  DOM.bingoBanner.style.display = "block";
-  setTimeout(() => { DOM.bingoBanner.style.display = "none"; }, 2200);
 }
 
 // ── End-Screen ───────────────────────────────

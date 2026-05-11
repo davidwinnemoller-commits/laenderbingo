@@ -180,21 +180,6 @@ body {
 .feedback.bad  { color: var(--red-500); }
 .feedback.info { color: var(--purple-500); }
 
-/* ── BINGO BANNER ── */
-.bingo-banner {
-  background: var(--purple-200);
-  color: var(--purple-900);
-  border-radius: var(--radius-md);
-  padding: 8px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 50px;
-  margin-bottom: 10px;
-  display: none;
-  animation: popIn 0.3s ease;
-}
-body.dark .bingo-banner { color: var(--purple-50); }
-
 @keyframes popIn {
   0%   { transform: scale(0.85); opacity: 0; }
   60%  { transform: scale(1.05); }
@@ -232,8 +217,8 @@ body.dark .bingo-banner { color: var(--purple-50); }
   border-color: var(--teal-500);
 }
 .cell.bingo-line {
-  background: var(--purple-50);
-  border-color: var(--purple-500);
+  background: var(--teal-50);
+  border-color: var(--teal-500);
 }
 .cell.flash-correct {
   background: var(--green-50);
@@ -268,7 +253,7 @@ body.dark .bingo-banner { color: var(--purple-50); }
   line-height: 1.35;
 }
 .cell.filled .cell-label { color: var(--teal-500); }
-.cell.bingo-line .cell-label { color: var(--purple-200); }
+.cell.bingo-line .cell-label { color: var(--teal-500); }
 
 .cell-countries {
   font-size: 11px;
