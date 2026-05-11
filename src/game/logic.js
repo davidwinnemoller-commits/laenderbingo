@@ -125,6 +125,8 @@ export function createGameState() {
 export function assignCountry(state, cellIndex) {
   if (state.gameOver) return null;
 
+  if (state.filled[cellIndex].length > 0) return { correct: false, bingoResult: { newLines: [], newCells: new Set() }, done: false };
+
   const country  = state.queue[state.queueIndex];
   const category = state.categories[cellIndex];
   const fits     = category.check(country);
@@ -149,19 +151,20 @@ export function assignCountry(state, cellIndex) {
   bingoResult.newLines.forEach(l => state.bingoLines.add(l));
   bingoResult.newCells.forEach(c => state.bingoCells.add(c));
 
-  // Gewonnen wenn alle 16 Kategorien gefüllt sind
-const allFilled = state.filled.every(arr => arr.length > 0);
-const outOfMoves = state.moves <= 0;
-const outOfCountries = state.queueIndex >= state.queue.length;
+// Gewonnen wenn alle 16 Kategorien gefüllt sind
+  const allFilled = state.filled.every(arr => arr.length > 0);
+  const outOfMoves = state.moves <= 0;
+  const outOfCountries = state.queueIndex >= state.queue.length;
 
-if (allFilled) {
-  state.gameOver = true;
-  state.finished = true;   // Sieg
-} else if (outOfMoves || outOfCountries) {
-  state.gameOver = true;
-  state.finished = false;  // Niederlage
-}
+  if (allFilled) {
+    state.gameOver = true;
+    state.finished = true;
+  } else if (outOfMoves || outOfCountries) {
+    state.gameOver = true;
+    state.finished = false;
+  }
 
+  const done = state.gameOver;
   return { correct: fits, bingoResult, done };
 }
 
@@ -189,6 +192,7 @@ if (allFilled) {
   state.finished = false;
 }
 
+  const done = state.gameOver;
   return { done };
 }
 

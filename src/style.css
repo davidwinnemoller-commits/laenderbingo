@@ -137,18 +137,25 @@ body {
   color: var(--text);
 }
 .btn-skip:disabled { opacity: 0.4; cursor: not-allowed; }
+.current-country .btn-skip {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-/* ── CURRENT COUNTRY ── */
 .current-country {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 12px 16px;
+  padding-right: 100px;
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 10px;
   transition: background 0.25s, border-color 0.25s;
+  position: relative;
 }
 
 .country-flag { font-size: 36px; line-height: 1; }
@@ -216,10 +223,7 @@ body {
   background: var(--teal-50);
   border-color: var(--teal-500);
 }
-.cell.bingo-line {
-  background: var(--teal-50);
-  border-color: var(--teal-500);
-}
+
 .cell.flash-correct {
   background: var(--green-50);
   border-color: var(--green-500);
@@ -253,7 +257,6 @@ body {
   line-height: 1.35;
 }
 .cell.filled .cell-label { color: var(--teal-500); }
-.cell.bingo-line .cell-label { color: var(--teal-500); }
 
 .cell-countries {
   font-size: 11px;

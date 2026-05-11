@@ -49,13 +49,18 @@ function startGame() {
 function handleCellClick(cellIndex) {
   if (!state || state.gameOver) return;
 
+  // Zelle bereits belegt → nur Feedback, kein Zug
+  if (state.filled[cellIndex].length > 0) {
+    showFeedback("Diese Kategorie ist bereits belegt!", "bad");
+    return;
+  }
+
   const country  = state.queue[state.queueIndex];
   const category = state.categories[cellIndex];
   const result   = assignCountry(state, cellIndex);
 
   if (!result) return;
 
-  // Feedback
   if (result.correct) {
     showFeedback(`✓ ${country.name} passt zu „${category.label}"`, "good");
     flashCell(cellIndex, "correct");
