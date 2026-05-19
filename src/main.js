@@ -13,6 +13,8 @@ import {
 import {
   DOM,
   initTheme,
+  startTimer,
+  stopTimer,
   renderGrid,
   renderCurrentCountry,
   updateHeader,
@@ -30,11 +32,27 @@ initTheme();
 // ── Spielzustand ─────────────────────────────
 let state = null;
 
+// ── Hilfsfunktion: Review-Bar ─────────────────
+
+const reviewBar     = document.getElementById("review-bar");
+const reviewRestBtn = document.getElementById("review-restart-btn");
+const reviewBtn     = document.getElementById("review-btn");
+
+function showReviewBar() {
+  reviewBar.style.display = "flex";
+  // Padding damit Grid nicht hinter Bar verschwindet
+}
+
+function hideReviewBar() {
+  reviewBar.style.display = "none";
+}
+
 // ── Spiel starten ────────────────────────────
 
 function startGame() {
   hideEndScreen();
   hideStartScreen();
+  hideReviewBar();
 
   state = createGameState();
 
@@ -42,6 +60,13 @@ function startGame() {
   renderCurrentCountry(state.queue[0]);
   updateHeader(state);
   setSkipEnabled(true);
+
+  startTimer(() => {
+    if (!state || state.gameOver) return;
+    state.gameOver = true;
+    setSkipEnabled(false);
+    showEndScreen({ ...getResult(state), timeout: true });
+  });
 }
 
 // ── Zell-Klick ───────────────────────────────
@@ -49,7 +74,6 @@ function startGame() {
 function handleCellClick(cellIndex) {
   if (!state || state.gameOver) return;
 
-  // Zelle bereits belegt → nur Feedback, kein Zug
   if (state.filled[cellIndex].length > 0) {
     showFeedback("Diese Kategorie ist bereits belegt!", "bad");
     return;
@@ -104,6 +128,7 @@ function handleSkip() {
 // ── Spiel beenden ────────────────────────────
 
 function endGame() {
+  stopTimer();
   setSkipEnabled(false);
   const result = getResult(state);
   showEndScreen(result);
@@ -114,3 +139,14 @@ function endGame() {
 DOM.startBtn.addEventListener("click", startGame);
 DOM.restartBtn.addEventListener("click", startGame);
 DOM.skipBtn.addEventListener("click", handleSkip);
+
+// "Feld anzeigen" — End-Screen schließen, Review-Bar einblenden
+reviewBtn.addEventListener("click", () => {
+  hideEndScreen();
+  // Grid nochmal rendern ohne Klick-Handler (read-only)
+  renderGrid(state, () => {});
+  showReviewBar();
+});
+
+// "Neues Spiel" aus der Review-Bar
+reviewRestBtn.addEventListener("click", startGame);
