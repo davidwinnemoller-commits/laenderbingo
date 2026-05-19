@@ -2,27 +2,18 @@
 // data/countries.js
 // Länderdaten für Länderbingo
 //
-// Felder:
-//   name          string   Deutscher Ländername
-//   flag          string   Emoji-Flagge
-//   olympicMedals number   Gesamt Olympia-Medaillen (Sommer, historisch)
-//   avgTemp       number   Jahresdurchschnittstemperatur in °C
-//   population    number   Einwohner in Millionen
-//   highestPeak   number   Höchster Berg in Metern
-//   landlocked    boolean  Kein Meereszugang
-//   euMember      boolean  EU-Mitglied
-//   gdpPerCapita  number   BIP pro Kopf in USD
-//   worldCupWinner boolean Fußball-Weltmeister (mind. 1x)
-//   isIsland      boolean  Inselstaat
-//   area          number   Fläche in km²
-//   continent     string   Kontinent
-//   literacy      number   Alphabetisierungsrate in %
-//   equatorNear   boolean  Weniger als 10° Breitengrad vom Äquator
-//   nuclearPower  boolean  Atommacht (anerkannt oder de facto)
-//   wildElephants boolean  Freilebende Elefantenpopulation
-//   g7Member      boolean  G7-Mitglied
-//   alpineCountry boolean  An den Alpen gelegen
-//   mediterranean boolean  Mittelmeeranrainer
+// Felder (neu hinzugekommen):
+//   isMonarchy       boolean  Monarchie (König/Königin/Sultan etc.)
+//   natoMember       boolean  NATO-Mitglied
+//   hasDesert        boolean  Wüste im Land
+//   hasVolcano       boolean  Aktiver Vulkan vorhanden
+//   schengenMember   boolean  Schengen-Mitglied
+//   hasRainforest    boolean  Regenwald im Land
+//   majorOilExporter boolean  Bedeutender Ölexporteur
+//   transcontinental boolean  Land liegt auf zwei Kontinenten
+//   noArmy           boolean  Kein eigenes Militär
+//   topGdpCountry    boolean  Top-5 BIP weltweit (nominal)
+//   leftHandTraffic  boolean  Linksverkehr
 // =============================================
 
 export const COUNTRIES = [
@@ -33,6 +24,9 @@ export const COUNTRIES = [
     isIsland: false, area: 357000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: true, alpineCountry: true, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: true, leftHandTraffic: false,
   },
   {
     name: "Frankreich", flag: "🇫🇷", code: "fr",
@@ -41,6 +35,9 @@ export const COUNTRIES = [
     isIsland: false, area: 551000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: true, wildElephants: false,
     g7Member: true, alpineCountry: true, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Brasilien", flag: "🇧🇷", code: "br",
@@ -49,6 +46,9 @@ export const COUNTRIES = [
     isIsland: false, area: 8515000, continent: "South America", literacy: 94,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "China", flag: "🇨🇳", code: "cn",
@@ -57,6 +57,9 @@ export const COUNTRIES = [
     isIsland: false, area: 9597000, continent: "Asia", literacy: 97,
     equatorNear: false, nuclearPower: true, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: true, leftHandTraffic: false,
   },
   {
     name: "USA", flag: "🇺🇸", code: "us",
@@ -65,6 +68,9 @@ export const COUNTRIES = [
     isIsland: false, area: 9372000, continent: "North America", literacy: 99,
     equatorNear: false, nuclearPower: true, wildElephants: false,
     g7Member: true, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: true, leftHandTraffic: false,
   },
   {
     name: "Indien", flag: "🇮🇳", code: "in",
@@ -73,6 +79,9 @@ export const COUNTRIES = [
     isIsland: false, area: 3287000, continent: "Asia", literacy: 77,
     equatorNear: false, nuclearPower: true, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: true, leftHandTraffic: true,
   },
   {
     name: "Australien", flag: "🇦🇺", code: "au",
@@ -81,6 +90,9 @@ export const COUNTRIES = [
     isIsland: true, area: 7692000, continent: "Oceania", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Kenia", flag: "🇰🇪", code: "ke",
@@ -89,6 +101,9 @@ export const COUNTRIES = [
     isIsland: false, area: 580000, continent: "Africa", literacy: 82,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Norwegen", flag: "🇳🇴", code: "no",
@@ -97,6 +112,9 @@ export const COUNTRIES = [
     isIsland: false, area: 385000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Nepal", flag: "🇳🇵", code: "np",
@@ -105,6 +123,9 @@ export const COUNTRIES = [
     isIsland: false, area: 147000, continent: "Asia", literacy: 76,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Bolivien", flag: "🇧🇴", code: "bo",
@@ -113,6 +134,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1099000, continent: "South America", literacy: 93,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Schweiz", flag: "🇨🇭", code: "ch",
@@ -121,6 +145,9 @@ export const COUNTRIES = [
     isIsland: false, area: 41000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: true, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Nigeria", flag: "🇳🇬", code: "ng",
@@ -129,6 +156,9 @@ export const COUNTRIES = [
     isIsland: false, area: 924000, continent: "Africa", literacy: 72,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Argentinien", flag: "🇦🇷", code: "ar",
@@ -137,6 +167,9 @@ export const COUNTRIES = [
     isIsland: false, area: 2780000, continent: "South America", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Japan", flag: "🇯🇵", code: "jp",
@@ -145,6 +178,9 @@ export const COUNTRIES = [
     isIsland: true, area: 378000, continent: "Asia", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: true, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: true, leftHandTraffic: true,
   },
   {
     name: "Luxemburg", flag: "🇱🇺", code: "lu",
@@ -153,6 +189,9 @@ export const COUNTRIES = [
     isIsland: false, area: 2586, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Tansania", flag: "🇹🇿", code: "tz",
@@ -161,6 +200,9 @@ export const COUNTRIES = [
     isIsland: false, area: 945000, continent: "Africa", literacy: 78,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Kanada", flag: "🇨🇦", code: "ca",
@@ -169,6 +211,9 @@ export const COUNTRIES = [
     isIsland: false, area: 9985000, continent: "North America", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: true, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Neuseeland", flag: "🇳🇿", code: "nz",
@@ -177,6 +222,9 @@ export const COUNTRIES = [
     isIsland: true, area: 268000, continent: "Oceania", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Russland", flag: "🇷🇺", code: "ru",
@@ -185,6 +233,9 @@ export const COUNTRIES = [
     isIsland: false, area: 17098000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: true, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: true,
+    transcontinental: true, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Ägypten", flag: "🇪🇬", code: "eg",
@@ -193,6 +244,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1002000, continent: "Africa", literacy: 73,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: true, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Kolumbien", flag: "🇨🇴", code: "co",
@@ -201,6 +255,20 @@ export const COUNTRIES = [
     isIsland: false, area: 1142000, continent: "South America", literacy: 95,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Österreich", flag: "🇦🇹", code: "at",
+    olympicMedals: 305, avgTemp: 8, population: 9, highestPeak: 3798,
+    landlocked: true, euMember: true, gdpPerCapita: 53000, worldCupWinner: false,
+    isIsland: false, area: 84000, continent: "Europe", literacy: 99,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: true, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Island", flag: "🇮🇸", code: "is",
@@ -209,6 +277,9 @@ export const COUNTRIES = [
     isIsland: true, area: 103000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: true,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: true, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Pakistan", flag: "🇵🇰", code: "pk",
@@ -217,6 +288,9 @@ export const COUNTRIES = [
     isIsland: false, area: 881000, continent: "Asia", literacy: 57,
     equatorNear: false, nuclearPower: true, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Peru", flag: "🇵🇪", code: "pe",
@@ -225,6 +299,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1285000, continent: "South America", literacy: 94,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Indonesien", flag: "🇮🇩", code: "id",
@@ -233,6 +310,9 @@ export const COUNTRIES = [
     isIsland: true, area: 1905000, continent: "Asia", literacy: 96,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Schweden", flag: "🇸🇪", code: "se",
@@ -241,6 +321,9 @@ export const COUNTRIES = [
     isIsland: false, area: 450000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Kuba", flag: "🇨🇺", code: "cu",
@@ -249,6 +332,9 @@ export const COUNTRIES = [
     isIsland: true, area: 110000, continent: "North America", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Äthiopien", flag: "🇪🇹", code: "et",
@@ -257,6 +343,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1104000, continent: "Africa", literacy: 52,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Mongolei", flag: "🇲🇳", code: "mn",
@@ -265,6 +354,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1564000, continent: "Asia", literacy: 98,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Portugal", flag: "🇵🇹", code: "pt",
@@ -273,6 +365,9 @@ export const COUNTRIES = [
     isIsland: false, area: 92000, continent: "Europe", literacy: 96,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: true,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Thailand", flag: "🇹🇭", code: "th",
@@ -281,6 +376,9 @@ export const COUNTRIES = [
     isIsland: false, area: 513000, continent: "Asia", literacy: 93,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Südafrika", flag: "🇿🇦", code: "za",
@@ -289,6 +387,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1219000, continent: "Africa", literacy: 87,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Kasachstan", flag: "🇰🇿", code: "kz",
@@ -297,6 +398,20 @@ export const COUNTRIES = [
     isIsland: false, area: 2725000, continent: "Asia", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: true,
+    transcontinental: true, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Griechenland", flag: "🇬🇷", code: "gr",
+    olympicMedals: 118, avgTemp: 18, population: 10, highestPeak: 2918,
+    landlocked: false, euMember: true, gdpPerCapita: 20000, worldCupWinner: false,
+    isIsland: false, area: 132000, continent: "Europe", literacy: 97,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: true,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Philippinen", flag: "🇵🇭", code: "ph",
@@ -305,6 +420,9 @@ export const COUNTRIES = [
     isIsland: true, area: 300000, continent: "Asia", literacy: 97,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Simbabwe", flag: "🇿🇼", code: "zw",
@@ -313,6 +431,9 @@ export const COUNTRIES = [
     isIsland: false, area: 391000, continent: "Africa", literacy: 88,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Dänemark", flag: "🇩🇰", code: "dk",
@@ -321,6 +442,9 @@ export const COUNTRIES = [
     isIsland: false, area: 43000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Madagaskar", flag: "🇲🇬", code: "mg",
@@ -329,6 +453,9 @@ export const COUNTRIES = [
     isIsland: true, area: 587000, continent: "Africa", literacy: 76,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Kirgisistan", flag: "🇰🇬", code: "kg",
@@ -337,6 +464,9 @@ export const COUNTRIES = [
     isIsland: false, area: 200000, continent: "Asia", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Mexiko", flag: "🇲🇽", code: "mx",
@@ -345,6 +475,9 @@ export const COUNTRIES = [
     isIsland: false, area: 1973000, continent: "North America", literacy: 95,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Italien", flag: "🇮🇹", code: "it",
@@ -353,6 +486,9 @@ export const COUNTRIES = [
     isIsland: false, area: 301000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: true, alpineCountry: true, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: true,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Spanien", flag: "🇪🇸", code: "es",
@@ -361,6 +497,9 @@ export const COUNTRIES = [
     isIsland: false, area: 505000, continent: "Europe", literacy: 98,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: true, natoMember: true, hasDesert: true, hasVolcano: true,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Niederlande", flag: "🇳🇱", code: "nl",
@@ -369,6 +508,9 @@ export const COUNTRIES = [
     isIsland: false, area: 42000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Ungarn", flag: "🇭🇺", code: "hu",
@@ -377,6 +519,9 @@ export const COUNTRIES = [
     isIsland: false, area: 93000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Kamerun", flag: "🇨🇲", code: "cm",
@@ -385,6 +530,9 @@ export const COUNTRIES = [
     isIsland: false, area: 475000, continent: "Africa", literacy: 78,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Usbekistan", flag: "🇺🇿", code: "uz",
@@ -393,6 +541,9 @@ export const COUNTRIES = [
     isIsland: false, area: 449000, continent: "Asia", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Saudi-Arabien", flag: "🇸🇦", code: "sa",
@@ -401,6 +552,9 @@ export const COUNTRIES = [
     isIsland: false, area: 2150000, continent: "Asia", literacy: 97,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Marokko", flag: "🇲🇦", code: "ma",
@@ -409,6 +563,9 @@ export const COUNTRIES = [
     isIsland: false, area: 447000, continent: "Africa", literacy: 74,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: true, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Venezuela", flag: "🇻🇪", code: "ve",
@@ -417,6 +574,9 @@ export const COUNTRIES = [
     isIsland: false, area: 912000, continent: "South America", literacy: 97,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Finnland", flag: "🇫🇮", code: "fi",
@@ -425,6 +585,9 @@ export const COUNTRIES = [
     isIsland: false, area: 338000, continent: "Europe", literacy: 100,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Südkorea", flag: "🇰🇷", code: "kr",
@@ -433,6 +596,9 @@ export const COUNTRIES = [
     isIsland: false, area: 100000, continent: "Asia", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Türkei", flag: "🇹🇷", code: "tr",
@@ -441,6 +607,9 @@ export const COUNTRIES = [
     isIsland: false, area: 783000, continent: "Asia", literacy: 97,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: true, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Vietnam", flag: "🇻🇳", code: "vn",
@@ -449,6 +618,9 @@ export const COUNTRIES = [
     isIsland: false, area: 331000, continent: "Asia", literacy: 96,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Chile", flag: "🇨🇱", code: "cl",
@@ -457,6 +629,9 @@ export const COUNTRIES = [
     isIsland: false, area: 756000, continent: "South America", literacy: 97,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Griechenland", flag: "🇬🇷", code: "gr",
@@ -465,6 +640,9 @@ export const COUNTRIES = [
     isIsland: false, area: 132000, continent: "Europe", literacy: 98,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: true,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Ghana", flag: "🇬🇭", code: "gh",
@@ -473,6 +651,9 @@ export const COUNTRIES = [
     isIsland: false, area: 238000, continent: "Africa", literacy: 80,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Polen", flag: "🇵🇱", code: "pl",
@@ -481,6 +662,9 @@ export const COUNTRIES = [
     isIsland: false, area: 312000, continent: "Europe", literacy: 100,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Malaysia", flag: "🇲🇾", code: "my",
@@ -489,6 +673,9 @@ export const COUNTRIES = [
     isIsland: false, area: 330000, continent: "Asia", literacy: 95,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Irland", flag: "🇮🇪", code: "ie",
@@ -497,6 +684,9 @@ export const COUNTRIES = [
     isIsland: true, area: 70000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Österreich", flag: "🇦🇹", code: "at",
@@ -505,6 +695,9 @@ export const COUNTRIES = [
     isIsland: false, area: 84000, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: true, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Kroatien", flag: "🇭🇷", code: "hr",
@@ -513,6 +706,9 @@ export const COUNTRIES = [
     isIsland: false, area: 56594, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Botswana", flag: "🇧🇼", code: "bw",
@@ -521,6 +717,9 @@ export const COUNTRIES = [
     isIsland: false, area: 581730, continent: "Africa", literacy: 88,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Uruguay", flag: "🇺🇾", code: "uy",
@@ -529,6 +728,9 @@ export const COUNTRIES = [
     isIsland: false, area: 176215, continent: "South America", literacy: 98,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Israel", flag: "🇮🇱", code: "il",
@@ -537,6 +739,9 @@ export const COUNTRIES = [
     isIsland: false, area: 22072, continent: "Asia", literacy: 97,
     equatorNear: false, nuclearPower: true, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Slowenien", flag: "🇸🇮", code: "si",
@@ -545,6 +750,9 @@ export const COUNTRIES = [
     isIsland: false, area: 20273, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: true, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Tunesien", flag: "🇹🇳", code: "tn",
@@ -553,6 +761,9 @@ export const COUNTRIES = [
     isIsland: false, area: 163610, continent: "Africa", literacy: 79,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Ecuador", flag: "🇪🇨", code: "ec",
@@ -561,6 +772,9 @@ export const COUNTRIES = [
     isIsland: false, area: 283561, continent: "South America", literacy: 93,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Slowakei", flag: "🇸🇰", code: "sk",
@@ -569,6 +783,9 @@ export const COUNTRIES = [
     isIsland: false, area: 49035, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Singapur", flag: "🇸🇬", code: "sg",
@@ -577,6 +794,9 @@ export const COUNTRIES = [
     isIsland: true, area: 728, continent: "Asia", literacy: 97,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Algerien", flag: "🇩🇿", code: "dz",
@@ -585,6 +805,9 @@ export const COUNTRIES = [
     isIsland: false, area: 2381741, continent: "Africa", literacy: 81,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: true,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Panama", flag: "🇵🇦", code: "pa",
@@ -593,6 +816,9 @@ export const COUNTRIES = [
     isIsland: false, area: 75420, continent: "North America", literacy: 95,
     equatorNear: true, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: true, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Demokratische Republik Kongo", flag: "🇨🇩", code: "cd",
@@ -601,6 +827,9 @@ export const COUNTRIES = [
     isIsland: false, area: 2344858, continent: "Africa", literacy: 77,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Belgien", flag: "🇧🇪", code: "be",
@@ -609,6 +838,9 @@ export const COUNTRIES = [
     isIsland: false, area: 30688, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Liechtenstein", flag: "🇱🇮", code: "li",
@@ -617,6 +849,9 @@ export const COUNTRIES = [
     isIsland: false, area: 160, continent: "Europe", literacy: 99,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: true, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: true, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Namibia", flag: "🇳🇦", code: "na",
@@ -625,6 +860,9 @@ export const COUNTRIES = [
     isIsland: false, area: 824292, continent: "Africa", literacy: 91,
     equatorNear: false, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: true, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Sri Lanka", flag: "🇱🇰", code: "lk",
@@ -633,6 +871,9 @@ export const COUNTRIES = [
     isIsland: true, area: 65610, continent: "Asia", literacy: 92,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
   },
   {
     name: "Albanien", flag: "🇦🇱", code: "al",
@@ -641,6 +882,9 @@ export const COUNTRIES = [
     isIsland: false, area: 28748, continent: "Europe", literacy: 98,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: true,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Paraguay", flag: "🇵🇾", code: "py",
@@ -649,6 +893,9 @@ export const COUNTRIES = [
     isIsland: false, area: 406752, continent: "South America", literacy: 95,
     equatorNear: false, nuclearPower: false, wildElephants: false,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
     name: "Südsudan", flag: "🇸🇸", code: "ss",
@@ -657,85 +904,118 @@ export const COUNTRIES = [
     isIsland: false, area: 644329, continent: "Africa", literacy: 35,
     equatorNear: true, nuclearPower: false, wildElephants: true,
     g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
   },
   {
-  name: "Tschechien", flag: "🇨🇿", code: "cz",
-  olympicMedals: 131, avgTemp: 9, population: 10.7, highestPeak: 1603,
-  landlocked: true, euMember: true, gdpPerCapita: 29000, worldCupWinner: false,
-  isIsland: false, area: 78866, continent: "Europe", literacy: 99,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Rumänien", flag: "🇷🇴", code: "ro",
-  olympicMedals: 309, avgTemp: 11, population: 19, highestPeak: 2544,
-  landlocked: false, euMember: true, gdpPerCapita: 19000, worldCupWinner: false,
-  isIsland: false, area: 238397, continent: "Europe", literacy: 99,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Serbien", flag: "🇷🇸", code: "rs",
-  olympicMedals: 24, avgTemp: 11, population: 6.6, highestPeak: 2656,
-  landlocked: true, euMember: false, gdpPerCapita: 11000, worldCupWinner: false,
-  isIsland: false, area: 88361, continent: "Europe", literacy: 98,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Georgien", flag: "🇬🇪", code: "ge",
-  olympicMedals: 40, avgTemp: 12, population: 3.7, highestPeak: 5193,
-  landlocked: false, euMember: false, gdpPerCapita: 8000, worldCupWinner: false,
-  isIsland: false, area: 69700, continent: "Asia", literacy: 99,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: true, mediterranean: false,
-},
-{
-  name: "Bangladesch", flag: "🇧🇩", code: "bd",
-  olympicMedals: 0, avgTemp: 26, population: 171, highestPeak: 1052,
-  landlocked: false, euMember: false, gdpPerCapita: 2800, worldCupWinner: false,
-  isIsland: false, area: 148460, continent: "Asia", literacy: 75,
-  equatorNear: false, nuclearPower: false, wildElephants: true,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Taiwan", flag: "🇹🇼", code: "tw",
-  olympicMedals: 36, avgTemp: 22, population: 23.5, highestPeak: 3952,
-  landlocked: false, euMember: false, gdpPerCapita: 33000, worldCupWinner: false,
-  isIsland: true, area: 36197, continent: "Asia", literacy: 99,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Costa Rica", flag: "🇨🇷", code: "cr",
-  olympicMedals: 4, avgTemp: 25, population: 5.2, highestPeak: 3821,
-  landlocked: false, euMember: false, gdpPerCapita: 17000, worldCupWinner: false,
-  isIsland: false, area: 51100, continent: "North America", literacy: 98,
-  equatorNear: true, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Guatemala", flag: "🇬🇹", code: "gt",
-  olympicMedals: 2, avgTemp: 24, population: 18, highestPeak: 4220,
-  landlocked: false, euMember: false, gdpPerCapita: 5600, worldCupWinner: false,
-  isIsland: false, area: 108889, continent: "North America", literacy: 82,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Jamaika", flag: "🇯🇲", code: "jm",
-  olympicMedals: 87, avgTemp: 27, population: 2.8, highestPeak: 2256,
-  landlocked: false, euMember: false, gdpPerCapita: 6200, worldCupWinner: false,
-  isIsland: true, area: 10991, continent: "North America", literacy: 88,
-  equatorNear: false, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
-{
-  name: "Uganda", flag: "🇺🇬", code: "ug",
-  olympicMedals: 11, avgTemp: 24, population: 49, highestPeak: 5109,
-  landlocked: true, euMember: false, gdpPerCapita: 950, worldCupWinner: false,
-  isIsland: false, area: 241038, continent: "Africa", literacy: 76, 
-  equatorNear: true, nuclearPower: false, wildElephants: false,
-  g7Member: false, alpineCountry: false, mediterranean: false,
-},
+    name: "Tschechien", flag: "🇨🇿", code: "cz",
+    olympicMedals: 131, avgTemp: 9, population: 10.7, highestPeak: 1603,
+    landlocked: true, euMember: true, gdpPerCapita: 29000, worldCupWinner: false,
+    isIsland: false, area: 78866, continent: "Europe", literacy: 99,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Rumänien", flag: "🇷🇴", code: "ro",
+    olympicMedals: 309, avgTemp: 11, population: 19, highestPeak: 2544,
+    landlocked: false, euMember: true, gdpPerCapita: 19000, worldCupWinner: false,
+    isIsland: false, area: 238397, continent: "Europe", literacy: 99,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: true, hasDesert: false, hasVolcano: false,
+    schengenMember: true, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Serbien", flag: "🇷🇸", code: "rs",
+    olympicMedals: 24, avgTemp: 11, population: 6.6, highestPeak: 2656,
+    landlocked: true, euMember: false, gdpPerCapita: 11000, worldCupWinner: false,
+    isIsland: false, area: 88361, continent: "Europe", literacy: 98,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Georgien", flag: "🇬🇪", code: "ge",
+    olympicMedals: 40, avgTemp: 12, population: 3.7, highestPeak: 5193,
+    landlocked: false, euMember: false, gdpPerCapita: 8000, worldCupWinner: false,
+    isIsland: false, area: 69700, continent: "Asia", literacy: 99,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: true, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: true, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Bangladesch", flag: "🇧🇩", code: "bd",
+    olympicMedals: 0, avgTemp: 26, population: 171, highestPeak: 1052,
+    landlocked: false, euMember: false, gdpPerCapita: 2800, worldCupWinner: false,
+    isIsland: false, area: 148460, continent: "Asia", literacy: 75,
+    equatorNear: false, nuclearPower: false, wildElephants: true,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Taiwan", flag: "🇹🇼", code: "tw",
+    olympicMedals: 36, avgTemp: 22, population: 23.5, highestPeak: 3952,
+    landlocked: false, euMember: false, gdpPerCapita: 33000, worldCupWinner: false,
+    isIsland: true, area: 36197, continent: "Asia", literacy: 99,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Costa Rica", flag: "🇨🇷", code: "cr",
+    olympicMedals: 4, avgTemp: 25, population: 5.2, highestPeak: 3821,
+    landlocked: false, euMember: false, gdpPerCapita: 17000, worldCupWinner: false,
+    isIsland: false, area: 51100, continent: "North America", literacy: 98,
+    equatorNear: true, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: true, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Guatemala", flag: "🇬🇹", code: "gt",
+    olympicMedals: 2, avgTemp: 24, population: 18, highestPeak: 4220,
+    landlocked: false, euMember: false, gdpPerCapita: 5600, worldCupWinner: false,
+    isIsland: false, area: 108889, continent: "North America", literacy: 82,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: false,
+  },
+  {
+    name: "Jamaika", flag: "🇯🇲", code: "jm",
+    olympicMedals: 87, avgTemp: 27, population: 2.8, highestPeak: 2256,
+    landlocked: false, euMember: false, gdpPerCapita: 6200, worldCupWinner: false,
+    isIsland: true, area: 10991, continent: "North America", literacy: 88,
+    equatorNear: false, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: true, natoMember: false, hasDesert: false, hasVolcano: false,
+    schengenMember: false, hasRainforest: false, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
+  },
+  {
+    name: "Uganda", flag: "🇺🇬", code: "ug",
+    olympicMedals: 11, avgTemp: 24, population: 49, highestPeak: 5109,
+    landlocked: true, euMember: false, gdpPerCapita: 950, worldCupWinner: false,
+    isIsland: false, area: 241038, continent: "Africa", literacy: 76,
+    equatorNear: true, nuclearPower: false, wildElephants: false,
+    g7Member: false, alpineCountry: false, mediterranean: false,
+    isMonarchy: false, natoMember: false, hasDesert: false, hasVolcano: true,
+    schengenMember: false, hasRainforest: true, majorOilExporter: false,
+    transcontinental: false, noArmy: false, topGdpCountry: false, leftHandTraffic: true,
+  },
 ];

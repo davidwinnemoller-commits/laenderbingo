@@ -1,15 +1,10 @@
 // =============================================
 // data/categories.js
 // Alle möglichen Kategorien für Länderbingo
-//
-// Jede Kategorie hat:
-//   id      string   Eindeutige ID
-//   icon    string   Emoji-Icon
-//   label   string   Anzeigename (kurz, passt in Zelle)
-//   check   function (country) => boolean
 // =============================================
 
 export const ALL_CATEGORIES = [
+  // ── BESTEHENDE KATEGORIEN ─────────────────
   {
     id: "olympic100",
     icon: "🏅",
@@ -36,7 +31,7 @@ export const ALL_CATEGORIES = [
   },
   {
     id: "landlocked",
-    icon: "🌊",
+    icon: "🔒",
     label: "Kein Meereszugang",
     check: c => c.landlocked,
   },
@@ -153,5 +148,133 @@ export const ALL_CATEGORIES = [
     icon: "🥇",
     label: "500+ Olympia-Medaillen",
     check: c => c.olympicMedals >= 500,
+  },
+
+  // ── NEUE KATEGORIEN (20) ──────────────────
+
+  // LEICHT
+  {
+    id: "europe",
+    icon: "🏰",
+    label: "In Europa",
+    check: c => c.continent === "Europe",
+  },
+  {
+    id: "northAmerica",
+    icon: "🗽",
+    label: "In Nordamerika",
+    check: c => c.continent === "North America",
+  },
+  {
+    id: "monarchy",
+    icon: "👑",
+    label: "Monarchie",
+    check: c => c.isMonarchy,
+  },
+  {
+    id: "nato",
+    icon: "🛡️",
+    label: "NATO-Mitglied",
+    check: c => c.natoMember,
+  },
+  {
+    id: "desert",
+    icon: "🏜️",
+    label: "Wüste im Land",
+    check: c => c.hasDesert,
+  },
+  {
+    id: "volcano",
+    icon: "🌋",
+    label: "Aktiver Vulkan",
+    check: c => c.hasVolcano,
+  },
+  {
+    id: "pop50m",
+    icon: "🏙️",
+    label: "50–100 Mio. Einwohner",
+    check: c => c.population >= 50 && c.population < 100,
+  },
+  {
+    id: "gdp10to30",
+    icon: "💵",
+    label: "BIP/Kopf $10.000–$30.000",
+    check: c => c.gdpPerCapita >= 10000 && c.gdpPerCapita < 30000,
+  },
+
+  // MITTEL
+  {
+    id: "schengen",
+    icon: "🛂",
+    label: "Schengen-Mitglied",
+    check: c => c.schengenMember,
+  },
+  {
+    id: "peak8000",
+    icon: "🗻",
+    label: "Berg über 8000 m",
+    check: c => c.highestPeak >= 8000,
+  },
+  {
+    id: "area500k",
+    icon: "🗾",
+    label: "Fläche unter 100.000 km²",
+    check: c => c.area < 100000,
+  },
+  {
+    id: "olympic50",
+    icon: "🎽",
+    label: "Weniger als 10 Olympia-Medaillen",
+    check: c => c.olympicMedals < 10,
+  },
+  {
+    id: "rainforest",
+    icon: "🌿",
+    label: "Regenwald im Land",
+    check: c => c.hasRainforest,
+  },
+  {
+    id: "highLiteracy",
+    icon: "📚",
+    label: "Alphabetisierung unter 80%",
+    check: c => c.literacy < 80,
+  },
+  {
+    id: "oilExporter",
+    icon: "🛢️",
+    label: "Bedeutender Ölexporteur",
+    check: c => c.majorOilExporter,
+  },
+
+  // SCHWER
+  {
+    id: "twoContinent",
+    icon: "🌐",
+    label: "Auf 2 Kontinenten",
+    check: c => c.transcontinental,
+  },
+  {
+    id: "microstate",
+    icon: "🔭",
+    label: "Kleinstaat (<1000 km²)",
+    check: c => c.area < 1000,
+  },
+  {
+    id: "noArmy",
+    icon: "☮️",
+    label: "Keine eigene Armee",
+    check: c => c.noArmy,
+  },
+  {
+    id: "gdpTop5",
+    icon: "📈",
+    label: "Top-5 BIP weltweit",
+    check: c => c.topGdpCountry,
+  },
+  {
+    id: "rightHandTraffic",
+    icon: "🚗",
+    label: "Linksverkehr",
+    check: c => c.leftHandTraffic,
   },
 ];

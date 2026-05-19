@@ -12,6 +12,7 @@ export const DOM = {
   statusText:     $("status-text"),
   skipBtn:        $("skip-btn"),
   themeBtn:       $("theme-btn"),
+  timerDisplay:   $("timer-display"),
   currentCountry: $("current-country"),
   countryFlag:    $("country-flag"),
   countryName:    $("country-name"),
@@ -52,6 +53,47 @@ export function initTheme() {
   });
 }
 
+// ── Timer ────────────────────────────────────
+
+const TIMER_SECONDS = 180; // 3 Minuten
+let timerInterval  = null;
+let timerRemaining = TIMER_SECONDS;
+let onTimerExpired = null;
+
+export function startTimer(onExpired) {
+  onTimerExpired  = onExpired;
+  timerRemaining  = TIMER_SECONDS;
+  updateTimerDisplay();
+
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timerRemaining--;
+    updateTimerDisplay();
+
+    if (timerRemaining <= 0) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      if (onTimerExpired) onTimerExpired();
+    }
+  }, 1000);
+}
+
+export function stopTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timerRemaining / 60);
+  const s = timerRemaining % 60;
+  const text = `${m}:${String(s).padStart(2, "0")}`;
+  DOM.timerDisplay.textContent = text;
+
+  DOM.timerDisplay.classList.remove("warning", "danger");
+  if (timerRemaining <= 30)      DOM.timerDisplay.classList.add("danger");
+  else if (timerRemaining <= 60) DOM.timerDisplay.classList.add("warning");
+}
+
 // ── Grid rendern ─────────────────────────────
 
 export function renderGrid(state, onCellClick) {
@@ -61,7 +103,6 @@ export function renderGrid(state, onCellClick) {
     const cell = document.createElement("div");
     cell.className = "cell";
     if (state.filled[i].length > 0) cell.classList.add("filled");
-    if (state.bingoCells.has(i))    cell.classList.add("bingo-line");
 
     const flags = state.filled[i].map(c =>
       `<img src="https://flagcdn.com/w20/${c.code}.png" height="14" alt="${c.name}" style="border-radius:2px">`
@@ -132,20 +173,19 @@ export function flashCell(index, type) {
 // ── End-Screen ───────────────────────────────
 
 export function showEndScreen(result) {
-  const title = result.finished ? "Alle Länder gespielt! 🎉" : "Keine Züge mehr!";
+  let title;
+  if (result.finished)      title = "Alle Kategorien gefüllt! 🎉";
+  else if (result.timeout)  title = "Zeit abgelaufen! ⏰";
+  else                      title = "Keine Züge mehr!";
 
   const sub = [
     `${result.filledCells}/${result.totalCells} Kategorien gefüllt`,
     `${result.correct} richtig · ${result.wrong} falsch · ${result.skipped} übersprungen`,
   ].join("\n");
 
-  const bingoText = result.bingoCount > 0
-    ? `${result.bingoCount} Bingo${result.bingoCount > 1 ? "s" : ""}! 🎊`
-    : "Kein Bingo diesmal.";
-
   DOM.endTitle.textContent = title;
   DOM.endSub.textContent   = sub;
-  DOM.endBingo.textContent = bingoText;
+  DOM.endBingo.textContent = "";
   DOM.endScreen.style.display = "flex";
 }
 
